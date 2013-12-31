@@ -1,5 +1,12 @@
-<div ng-controller='ProjectCtrl'>
-    <ul class="list-group">
-        <li class="list-group-item" ng-repeat="project in projects">{{project.name}}</li>
+<div>
+   <ul class="list-group">
+        <li class="list-group-item" ng-repeat="project in projects">
+            <div ng-controller='CollapseCtrl'>
+                <a href ng-click="isCollapsed = !isCollapsed">{{project.name}}</a>
+                <div collapse='isCollapsed'>
+                    {{project.description}} 
+                </div>
+            </div>
+        </li>
     </ul>
 </div>

@@ -7,7 +7,8 @@ angular.module('demo', [
   'demo.filters',
   'demo.services',
   'demo.directives',
-  'demo.controllers'
+  'demo.controllers',
+  'ui.bootstrap'
 ]).
 config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/', {templateUrl: 'home.html', controller: 'HomeCtrl'});
