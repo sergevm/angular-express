@@ -1,6 +1,5 @@
-<h3>Projects</h3>
-<div ng-controller='ProjectCtrl' class="projects">
-    <ul class="listing">
-        <li ng-repeat="project in projects">{{project.name}}</li>
+<div ng-controller='ProjectCtrl'>
+    <ul class="list-group">
+        <li class="list-group-item" ng-repeat="project in projects">{{project.name}}</li>
     </ul>
 </div>

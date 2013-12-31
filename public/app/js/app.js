@@ -10,6 +10,8 @@ angular.module('demo', [
   'demo.controllers'
 ]).
 config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/', {templateUrl: 'projects.html', controller: 'ProjectCtrl'});
-  $routeProvider.otherwise({redirectTo: '/view1'});
+  $routeProvider.when('/', {templateUrl: 'home.html', controller: 'HomeCtrl'});
+  $routeProvider.when('/projects', {templateUrl: 'projects.html', controller: 'ProjectCtrl'});
+  $routeProvider.when('/companies', {templateUrl: 'companies.html', controller: 'CompanyCtrl'});
+  $routeProvider.otherwise({redirectTo: '/'});
 }]);
