@@ -2,11 +2,47 @@
    <ul class="list-group">
         <li class="list-group-item" ng-repeat="project in projects">
             <div ng-controller='CollapseCtrl'>
+                <button class="btn btn-default" ng-click="edit(project)" style="margin-right: 20px">edit</button>
                 <a href ng-click="isCollapsed = !isCollapsed">{{project.name}}</a>
                 <div collapse='isCollapsed'>
-                    {{project.description}} 
+                    Description: {{project.description}} 
                 </div>
             </div>
         </li>
     </ul>
+    <button class="btn" ng-click="create()">create new</button>
 </div>
+
+<!-- Template for create and edit -->
+<script id="editproject.html" type="text/ng-template">
+    <div class="modal-header">
+        <h3>Edit project</h3> 
+    </div>
+    
+    <div class="alert alert-warning" ng-show="validationerrors.length > 0">
+        <ul class="list-unstyled">
+            <li ng-repeat="error in validationerrors">
+                {{error}}
+            </li>
+        </ul>
+    </div>
+
+    <form role='form' name='editform' novalidate class="form-horizontal">
+        <div class="modal-body">
+            <div class="form-group">
+                <label for="name">Project Name</label>    
+                <input type="text" name="name" class="form-control" placeholder="name" ng-model="project.name" required />
+                <div class='error' ng-show="(submitted || editform.name.$dirty) && editform.name.$invalid">
+                    <small class='error' ng-show="editform.name.$error.required">
+                        Please specify the project name
+                    </small>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="description">Description</label>
+                <input class="form-control" type="text" placeholder="description" ng-model="project.description" />
+            </div>
+        <button class="btn btn-primary" ng-click="ok()" ng-disabled="editform.$invalid">OK</button>
+        <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+    </form>
+</script>
