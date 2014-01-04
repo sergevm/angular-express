@@ -1,19 +1,21 @@
+'use strict';
+
 module.exports = function(config){
     config.set({
-    basePath : '../',
+    basePath : '../../',
 
     files : [
-      'app/lib/angular/angular.js',
-      'app/lib/angular/angular-*.js',
-      'test/lib/angular/angular-mocks.js',
-      'app/js/**/*.js',
-      'test/unit/**/*.js'
+      'public/lib/angular/angular.js',
+      'public/lib/angular/angular-*.js',
+      'test/karma/lib/angular/angular-mocks.js',
+      'public/js/**/*.js',
+      'test/karma/unit/**/*.js'
     ],
 
     exclude : [
-      'app/lib/angular/angular-loader.js',
-      'app/lib/angular/*.min.js',
-      'app/lib/angular/angular-scenario.js'
+      'public/lib/angular/angular-loader.js',
+      'public/lib/angular/*.min.js',
+      'public/lib/angular/angular-scenario.js'
     ],
 
     autoWatch : true,

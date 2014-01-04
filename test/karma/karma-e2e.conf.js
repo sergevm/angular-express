@@ -1,11 +1,13 @@
+'use strict';
+
 module.exports = function(config){
     config.set({
 
 
-    basePath : '../',
+    basePath : '../../',
 
     files : [
-        'test/e2e/**/*.js'
+        'test/karma/e2e/**/*.js'
     ],
 
     autoWatch : false,
@@ -32,6 +34,5 @@ module.exports = function(config){
       outputFile: 'test_out/e2e.xml',
       suite: 'e2e'
     }
-
-})}
-
+});
+};
